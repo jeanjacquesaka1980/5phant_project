@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+/* Header */
+#header {
+  height: 15vh;
+  border-bottom: 3px solid #cbcbcb !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn-close {
+  height: 2em;
+  width: auto;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn-publish {
+  border-radius: 35px !important;
+  background-color: #e7386a !important;
+  border: 1px solid #e7386a !important;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Main */
+#main {
+  border-bottom: 3px solid #cbcbcb !important;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-post {
+  border-radius: 35px !important;
+  border: 2px solid #e7386a !important;
+  color: #e7386a !important;
+  cursor: pointer;
+  width: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-review,
+.btn-offers {
+  border-radius: 35px !important;
+  border: 2px solid #cbcbcb !important;
+  color: #cbcbcb !important;
+  cursor: pointer;
+  width: 100px;
+}
+
+.input-search {
+  border-radius: 35px !important;
+  border: 2px solid #e5e5e5 !important;
+  color: #212121 !important;
+  background-color: #e5e5e5 !important;
+}
+
+.search-icon {
+  height: 2em;
+  width: auto;
+}
+
+.input-title {
+  position: absolute;
+  margin-top: -15px;
+  width: 50% !important;
+  border-radius: 35px !important;
+  border: 1px solid #e7386a !important;
+  color: #e7386a !important;
+  margin-left: 10%;
+}
+
+.input-text-area {
+  border: 1px solid #e7386a !important;
+}
+
+.icon {
+  height: 2em;
+  width: auto;
+  background-color: #e7386a;
+  border-radius: 50%;
+}
+
+.icons {
+  margin-top: -15px;
+  z-index: 1000;
+  position: absolute;
+  left: 265px;
+}
+
+/* Footer */
+.icon-star {
+  height: 2em;
+  width: auto;
+}
+
+.ratings {
+  color: #e7386a
+}
+
+.input-offers {
+  border-radius: 35px !important;
+}
+
+.red {
+  color: #e7386a
 }
