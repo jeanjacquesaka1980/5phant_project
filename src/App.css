@@ -22,7 +22,7 @@
   border-bottom: 3px solid #cbcbcb !important;
 }
 
-.btn-post {
+.active {
   border-radius: 35px !important;
   border: 2px solid #e7386a !important;
   color: #e7386a !important;
@@ -30,8 +30,7 @@
   width: 100px;
 }
 
-.btn-review,
-.btn-offers {
+.not-active {
   border-radius: 35px !important;
   border: 2px solid #cbcbcb !important;
   color: #cbcbcb !important;
@@ -96,3 +95,17 @@
 .red {
   color: #e7386a
 }
+
+.card-popup {
+  border: 2px solid #e7386a !important;
+}
+
+/* #input-type-file button {
+  background-color: blue !important
+}
+
+input[type=file] {
+  border: 2px solid #e7386a !important;
+  border-radius: 35px !important;
+  padding: 5px;
+} */

@@ -25,17 +25,48 @@ import { IconContext } from "react-icons";
 import StarRatingComponent from "react-star-rating-component";
 import FormGroup from "react-bootstrap/FormGroup";
 
+// import FileBase64
+import FileBase64 from "react-file-base64";
+
 class App extends React.Component {
   state = {
-    rating: 1
+    rating: 1,
+    postOnClick: false,
+    reviewOnClick: false,
+    offersOnClick: false
   };
 
   onStarClick(nextValue, prevValue, name) {
     this.setState({ rating: nextValue });
   }
 
+  postOnClick = () => {
+    this.setState({
+      postOnClick: true,
+    });
+  };
+  reviewOnClick = () => {
+    this.setState({
+      reviewOnClick: true,
+    });
+  };
+  offersOnClick = () => {
+    this.setState({
+      offersOnClick: true
+    });
+  };
+
+  onMouseLeave = () => {
+    this.setState({
+      postOnClick: false,
+      reviewOnClick: false,
+      offersOnClick: false
+    });
+  };
+
   render() {
     const { rating } = this.state;
+
     return (
       <Container fluid={true}>
         <Row>
@@ -70,11 +101,33 @@ class App extends React.Component {
           <Col id="main" xl={12}>
             <main className="text-center m-3">
               <ButtonGroup aria-label="Basic example">
-                <Button className="btn-post mr-3 bg-transparent">Post</Button>
-                <Button className="btn-review mr-3 bg-transparent">
+                <Button
+                  onClick={this.postOnClick}
+                  onBlur={this.onMouseLeave}
+                  className={
+                    this.state.postOnClick
+                      ? "active mr-3 bg-transparent"
+                      : "not-active mr-3 bg-transparent"
+                  }
+                >
+                  Post
+                </Button>
+                <Button
+                  onClick={this.reviewOnClick}
+                  onBlur={this.onMouseLeave}
+                  className={this.state.reviewOnClick
+                  ? "active mr-3 bg-transparent"
+                  : "not-active mr-3 bg-transparent"}
+                >
                   Review
                 </Button>
-                <Button className="btn-offers mr-3 bg-transparent">
+                <Button
+                  onClick={this.offersOnClick}
+                  onBlur={this.onMouseLeave}
+                  className={this.state.offersOnClick
+                    ? "active mr-3 bg-transparent"
+                    : "not-active mr-3 bg-transparent"}
+                >
                   Offers
                 </Button>
               </ButtonGroup>
@@ -182,6 +235,37 @@ class App extends React.Component {
                   />
                 </div>
               </Form.Group>
+              {/* POP UP FOR YOUTUBE ETC ... */}
+              <Card className="card-popup p-2">
+                <Card.Body className="">
+                  <Form.Group as={Row} className="offers">
+                    <Form.Label column className="text-left red">
+                      Url
+                    </Form.Label>
+                    <Form.Control
+                      column
+                      className="input-offers"
+                      type="text"
+                      placeholder="Paste your Url"
+                    />
+                    <Button
+                      type="button"
+                      className="float-left mt-3 btn-publish px-5 shadow"
+                    >
+                      Validate
+                    </Button>
+                  </Form.Group>
+                </Card.Body>
+              </Card>
+
+              {/* <Card id="input-type-file" className="card-popup p-2">
+                <Card.Body className="">
+                  <FileBase64
+                    multiple={true}
+                    onDone={this.getFiles}
+                  />
+                </Card.Body>
+              </Card> */}
             </footer>
           </Col>
         </Row>
